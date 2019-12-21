@@ -20,17 +20,6 @@ import StyleSheet from './StyleSheet';
 
 class SegmentedControl extends React.Component {
   static displayName = 'PageControl';
-
-  static propTypes: {
-    values: PropTypes.array,
-    selectionColor: PropTypes.string,
-    selectedIndex: PropTypes.number,
-    onChange: PropTypes.func,
-    titleStyle: PropTypes.any,
-    segmentStyle: PropTypes.any,
-    style: ViewPropTypes.style,
-  };
-
   render() {
     let segments = this.props.values.map((value, index) => (
       <Segment
@@ -48,15 +37,6 @@ class SegmentedControl extends React.Component {
 }
 
 class Segment extends React.Component {
-  props: {
-    value: string,
-    isSelected: boolean,
-    selectionColor: string,
-    segmentStyle?: any,
-    titleStyle?: any,
-    onPress: () => void,
-  };
-
   render() {
     let selectedButtonStyle;
     if (this.props.isSelected) {
